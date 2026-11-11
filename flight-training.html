@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="fa" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#dacfc0" />
+    <meta name="description" content="آشنایی با مسیر آموزش خلبانی فوق‌سبک در RAMZI AERO؛ از مبانی پرواز تا آمادگی و ارتباطات هوانوردی." />
+    <title>Ultralight Flight Training — RAMZI AERO</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* First section only: scoped Bento layout for Ultralight Flight Training. */
+      #training-hero { width: 100%; padding: clamp(38px, 6vw, 86px) 5%; overflow: hidden; background: #f0f0ee; }
+      #training-hero, #training-hero * { box-sizing: border-box; }
+      #training-hero .ft-bento-grid { display: grid; width: min(100%, 1600px); margin: 0 auto; grid-template-columns: 1.05fr 1fr 1fr 1fr; grid-template-rows: repeat(2, minmax(250px, 270px)) 76px; gap: 16px; }
+      #training-hero .ft-bento-card { position: relative; min-width: 0; overflow: hidden; border: 1px solid rgba(20, 28, 36, .045); border-radius: 24px; background: #fff; box-shadow: 0 8px 25px rgba(0,0,0,.035); }
+      #training-hero .ft-bento-intro { grid-column: 1; grid-row: 1 / 3; display: flex; flex-direction: column; justify-content: space-between; padding: 29px; }
+      #training-hero .ft-bento-menu-icon, #training-hero .ft-bento-round-icon { position: relative; z-index: 3; display: grid; width: 42px; height: 42px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #f2f3f3; color: #27394b; }
+      #training-hero .ft-bento-menu-icon svg, #training-hero .ft-bento-round-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      #training-hero .ft-bento-intro-copy { position: relative; z-index: 2; }
+      #training-hero .ft-bento-plane { position: absolute; z-index: 1; top: 8px; right: 18px; width: 58%; max-width: 235px; pointer-events: none; }
+      #training-hero .ft-bento-plane img { display: block; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 14px 18px rgba(20,34,48,.12)); transform: rotate(-9deg); }
+      #training-hero .ft-bento-kicker { margin: 0 0 14px; color: #667382; font: 650 10px/1.6 var(--serif); letter-spacing: .14em; }
+      #training-hero .ft-bento-kicker span { color: #b28d4b; }
+      #training-hero .ft-bento-title { margin: 0 0 18px; color: #111315; font: 750 clamp(36px, 3.1vw, 52px)/.98 var(--serif); letter-spacing: -.055em; }
+      #training-hero .ft-bento-title span, #training-hero .ft-bento-title em { display: block; }
+      #training-hero .ft-bento-title em { margin-top: 7px; color: #777; font: italic 400 .79em/1.08 Georgia, "Times New Roman", serif; letter-spacing: -.045em; }
+      #training-hero .ft-bento-description { max-width: 340px; margin: 0; color: #6b7074; font: 400 14px/1.9 var(--persian); text-align: right; }
+      #training-hero .ft-bento-cta { display: inline-flex; min-height: 42px; align-items: center; gap: 12px; margin-top: 20px; padding: 0 15px; border-radius: 999px; background: #182b40; color: #fff; font: 600 11px/1 var(--persian); transition: transform .2s ease, background .2s ease; }
+      #training-hero .ft-bento-cta:hover { transform: translateY(-2px); background: #24486a; }
+      #training-hero .ft-bento-cta span { font: 18px/1 var(--serif); }
+      #training-hero .ft-bento-socials { display: flex; gap: 10px; margin-top: 23px; }
+      #training-hero .ft-bento-socials a { display: grid; width: 39px; height: 39px; place-items: center; border-radius: 50%; background: #f0f1f1; color: #4d5964; font: 600 10px var(--serif); transition: transform .2s ease, background .2s ease, color .2s ease; }
+      #training-hero .ft-bento-socials a:hover { transform: translateY(-2px); background: #182b40; color: #fff; }
+      #training-hero .ft-bento-main-image { grid-column: 2 / 4; grid-row: 1; background: #c9d0d5; }
+      #training-hero .ft-bento-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1); transition: opacity .9s ease, transform 1.2s ease; }
+      #training-hero .ft-bento-slide.is-active { opacity: 1; transform: scale(1.025); }
+      #training-hero .ft-bento-main-image:hover .ft-bento-slide.is-active { transform: scale(1.055); }
+      #training-hero .ft-bento-main-image::after, #training-hero .ft-bento-runway::after { position: absolute; inset: 35% 0 0; background: linear-gradient(0deg, rgba(11,22,34,.63), transparent); content: ""; pointer-events: none; }
+      #training-hero .ft-bento-image-caption { position: absolute; z-index: 2; right: 24px; bottom: 20px; left: 24px; color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.42); }
+      #training-hero .ft-bento-image-caption span { font: 650 9px/1.5 var(--serif); letter-spacing: .17em; }
+      #training-hero .ft-bento-image-caption h2 { margin: 6px 0 0; font: 650 21px/1.2 var(--serif); letter-spacing: -.025em; }
+      #training-hero .ft-bento-info { grid-column: 4; grid-row: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 26px; }
+      #training-hero .ft-bento-info-image { position: absolute; inset: 0 0 auto; width: 100%; height: 39%; object-fit: cover; object-position: center 52%; opacity: .82; }
+      #training-hero .ft-bento-info::after { position: absolute; z-index: 1; inset: 13% 0 auto; height: 33%; background: linear-gradient(180deg, rgba(255,255,255,0), #fff); content: ""; pointer-events: none; }
+      #training-hero .ft-bento-info h2, #training-hero .ft-bento-global h2 { margin: 0 0 10px; color: #171a1c; font: 650 21px/1.25 var(--persian); }
+      #training-hero .ft-bento-info p, #training-hero .ft-bento-global p { margin: 0; color: #74797c; font: 400 13px/1.85 var(--persian); text-align: right; }
+      #training-hero .ft-bento-info > div { position: relative; z-index: 2; }
+      #training-hero .ft-bento-runway { grid-column: 2; grid-row: 2; background: #c9d0d5; }
+      #training-hero .ft-bento-runway img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
+      #training-hero .ft-bento-runway:hover img { transform: scale(1.05); }
+      #training-hero .ft-bento-global { grid-column: 3 / 5; grid-row: 2; display: flex; flex-direction: column; justify-content: space-between; padding: 27px; }
+      #training-hero .ft-bento-globe { position: absolute; z-index: 1; top: -23%; right: -4%; width: 77%; height: 145%; opacity: .2; pointer-events: none; }
+      #training-hero .ft-bento-global::after { position: absolute; z-index: 2; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.86) 43%, rgba(255,255,255,.62) 100%); content: ""; pointer-events: none; }
+      #training-hero .ft-bento-global-image { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; border-radius: inherit; object-fit: cover; object-position: center; opacity: .42; }
+      #training-hero .ft-bento-global > div { position: relative; z-index: 3; max-width: 52%; margin-top: auto; }
+      #training-hero .ft-bento-marquee { grid-column: 1 / 5; grid-row: 3; display: flex; align-items: center; gap: 30px; padding: 0 24px; }
+      #training-hero .ft-bento-marquee-label { display: flex; flex: 0 0 auto; flex-direction: column; color: #20262b; font: 650 12px/1.3 var(--serif); }
+      #training-hero .ft-bento-marquee-label span:last-child { color: #777; font-weight: 450; }
+      #training-hero .ft-bento-marquee-mask { flex: 1; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+      #training-hero .ft-bento-marquee-track { display: flex; width: max-content; align-items: center; gap: 44px; animation: ft-training-marquee 35s linear infinite; }
+      #training-hero .ft-bento-marquee-track span { color: #71777b; font: 650 10px/1 var(--serif); letter-spacing: .13em; white-space: nowrap; }
+      @keyframes ft-training-marquee { to { transform: translateX(-50%); } }
+      @media (max-width: 1024px) {
+        #training-hero { padding: 58px 4%; }
+        #training-hero .ft-bento-grid { grid-template-columns: repeat(2, minmax(0,1fr)); grid-template-rows: auto; }
+        #training-hero .ft-bento-intro { grid-column: 1; grid-row: 1 / 3; min-height: 500px; }
+        #training-hero .ft-bento-plane { top: 8px; right: 16px; width: 48%; max-width: 195px; }
+        #training-hero .ft-bento-main-image { grid-column: 2; grid-row: 1; min-height: 260px; }
+        #training-hero .ft-bento-info { grid-column: 2; grid-row: 2; min-height: 230px; }
+        #training-hero .ft-bento-runway { grid-column: 1; grid-row: 3; min-height: 240px; }
+        #training-hero .ft-bento-global { grid-column: 2; grid-row: 3; min-height: 260px; }
+        #training-hero .ft-bento-marquee { grid-column: 1 / 3; grid-row: 4; min-height: 76px; }
+      }
+      @media (max-width: 600px) {
+        #training-hero { padding: 34px 16px; }
+        #training-hero .ft-bento-grid { grid-template-columns: minmax(0,1fr); gap: 12px; }
+        #training-hero .ft-bento-intro { grid-column: 1; grid-row: auto; min-height: 500px; padding: 23px; }
+        #training-hero .ft-bento-plane { top: 5px; right: 14px; width: 52%; max-width: 195px; }
+        #training-hero .ft-bento-kicker { font-size: 9px; }
+        #training-hero .ft-bento-title { font-size: clamp(38px, 10vw, 48px); }
+        #training-hero .ft-bento-description { font-size: 13px; }
+        #training-hero .ft-bento-main-image { grid-column: 1; grid-row: auto; min-height: 240px; }
+        #training-hero .ft-bento-info { grid-column: 1; grid-row: auto; min-height: 235px; }
+        #training-hero .ft-bento-info-image { height: 35%; }
+        #training-hero .ft-bento-runway { grid-column: 1; grid-row: auto; min-height: 220px; }
+        #training-hero .ft-bento-global { grid-column: 1; grid-row: auto; min-height: 340px; padding: 23px; }
+        #training-hero .ft-bento-global-image { object-position: center; }
+        #training-hero .ft-bento-global::after { background: linear-gradient(90deg, rgba(255,255,255,.9), rgba(255,255,255,.72)); }
+        #training-hero .ft-bento-global > div { max-width: 100%; }
+        #training-hero .ft-bento-globe { top: 9px; right: 8%; width: 78%; height: 47%; opacity: .16; }
+        #training-hero .ft-bento-marquee { grid-column: 1; grid-row: auto; min-height: 78px; gap: 15px; padding: 0 14px; }
+        #training-hero .ft-bento-marquee-label { font-size: 10px; }
+        #training-hero .ft-bento-marquee-track { gap: 27px; }
+        #training-hero .ft-bento-marquee-track span { font-size: 9px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #training-hero .ft-bento-marquee-track { animation: none; }
+        #training-hero .ft-bento-slide, #training-hero .ft-bento-runway img, #training-hero .ft-bento-cta, #training-hero .ft-bento-socials a { transition: none; }
+      }
+
+      /* Next section: editorial engine hero, scoped to this section only. */
+      #ra-training-engine-hero, #ra-training-engine-hero * { box-sizing: border-box; }
+      #ra-training-engine-hero { --ra-training-ink: #101114; --ra-training-muted: #6d7074; position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); align-items: center; width: min(92%, 1700px); min-height: clamp(440px, 38vw, 650px); margin: 0 auto clamp(48px, 6vw, 88px); padding: clamp(38px, 5.3vw, 92px); overflow: hidden; border: 8px solid rgba(255,255,255,.9); border-radius: clamp(28px, 3.2vw, 52px); background: #e7e7e8; box-shadow: 0 18px 45px rgba(0,0,0,.07); direction: ltr; }
+      #ra-training-engine-hero::before { position: absolute; z-index: 0; top: 50%; right: 1%; width: 62%; overflow: hidden; transform: translateY(-50%); color: rgba(105,112,122,.13); content: "RAMZI AERO"; font: 850 clamp(54px, 7.8vw, 148px)/.9 var(--serif, Arial, sans-serif); letter-spacing: -.065em; text-align: center; white-space: nowrap; pointer-events: none; }
+      #ra-training-engine-hero .ra-training-hero-copy { position: relative; z-index: 3; grid-column: 1; grid-row: 1; width: 100%; max-width: 670px; min-width: 0; }
+      #ra-training-engine-hero .ra-training-kicker { margin: 0 0 20px; color: #74777a; font: 650 10px/1.65 var(--serif, Arial, sans-serif); letter-spacing: .17em; }
+      #ra-training-engine-hero h2 { margin: 0; color: var(--ra-training-ink); font: 780 clamp(54px, 6.2vw, 104px)/.98 var(--serif, Arial, sans-serif); letter-spacing: -.065em; }
+      #ra-training-engine-hero h2 span, #ra-training-engine-hero h2 em { display: block; direction: ltr; unicode-bidi: isolate; }
+      #ra-training-engine-hero h2 em { margin-top: .12em; color: #737373; font: italic 400 .72em/1 Georgia, "Times New Roman", serif; letter-spacing: -.07em; white-space: nowrap; }
+      #ra-training-engine-hero .ra-training-description { max-width: 510px; margin: 25px 0 30px; color: var(--ra-training-muted); font: 400 clamp(14px, 1.15vw, 17px)/1.9 var(--persian, Vazirmatn, Tahoma, sans-serif); text-align: right; }
+      #ra-training-engine-hero .ra-training-cta { display: inline-flex; min-height: 60px; align-items: center; gap: 17px; padding: 7px 8px 7px 27px; border-radius: 999px; background: #090909; box-shadow: 0 12px 25px rgba(0,0,0,.16); color: #fff; font: 650 14px/1 var(--serif, Arial, sans-serif); text-decoration: none; transition: transform .25s ease, box-shadow .25s ease; }
+      #ra-training-engine-hero .ra-training-cta:hover { transform: translateY(-3px); box-shadow: 0 16px 30px rgba(0,0,0,.2); }
+      #ra-training-engine-hero .ra-training-cta i { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 50%; background: #c9a45b; color: #111; font-size: 22px; font-style: normal; }
+      #ra-training-engine-hero .ra-training-engine-visual { position: absolute; z-index: 2; top: 0; right: 0; display: grid; width: 58%; height: 100%; place-items: center; overflow: hidden; isolation: isolate; pointer-events: none; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%); }
+      #ra-training-engine-hero .ra-training-engine-visual::before { position: absolute; z-index: 0; inset: 8%; border-radius: 50%; background: rgba(255,255,255,.72); content: ""; filter: blur(58px); }
+      #ra-training-engine-hero .ra-training-watermark { display: none; }
+      #ra-training-engine-hero .ra-training-engine { position: relative; left: 3%; z-index: 1; display: block; width: 112%; max-width: none; height: 112%; object-fit: contain; filter: drop-shadow(0 18px 18px rgba(18,32,44,.14)); transform: rotate(0deg); will-change: transform; }
+      #ra-training-engine-hero .ra-training-smoke { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+      @media (max-width: 900px) and (min-width: 601px) {
+        #ra-training-engine-hero { grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr); width: 92%; min-height: 460px; padding: 42px; }
+        #ra-training-engine-hero h2 { font-size: clamp(46px, 6vw, 68px); }
+        #ra-training-engine-hero h2 em { white-space: normal; }
+        #ra-training-engine-hero .ra-training-engine-visual { width: 50%; }
+        #ra-training-engine-hero .ra-training-engine { left: 2%; }
+      }
+      @media (max-width: 600px) {
+        #ra-training-engine-hero { grid-template-columns: minmax(0, 1fr); gap: 6px; width: calc(100% - 28px); min-height: 0; margin-bottom: 40px; padding: 30px 22px 15px; border-width: 5px; border-radius: 27px; }
+        #ra-training-engine-hero::before { top: auto; right: 0; bottom: 18%; width: 100%; transform: none; font-size: clamp(60px, 17vw, 104px); text-align: center; }
+        #ra-training-engine-hero .ra-training-hero-copy { grid-column: 1; grid-row: 1; }
+        #ra-training-engine-hero .ra-training-kicker { max-width: 100%; margin-bottom: 15px; font-size: 9px; }
+        #ra-training-engine-hero h2 { font-size: clamp(43px, 11vw, 63px); }
+        #ra-training-engine-hero h2 em { white-space: normal; }
+        #ra-training-engine-hero .ra-training-description { max-width: 100%; margin: 18px 0 20px; font-size: 14px; line-height: 1.8; }
+        #ra-training-engine-hero .ra-training-cta { min-height: 53px; gap: 13px; padding-left: 21px; font-size: 13px; }
+        #ra-training-engine-hero .ra-training-cta i { width: 39px; height: 39px; font-size: 19px; }
+        #ra-training-engine-hero .ra-training-engine-visual { position: relative; top: auto; right: auto; grid-column: 1; grid-row: 2; width: calc(100% + 26px); height: auto; min-height: 0; margin: 0 -13px; aspect-ratio: 1.55 / 1; }
+        #ra-training-engine-hero .ra-training-engine { left: 0; width: 112%; height: 112%; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #ra-training-engine-hero .ra-training-engine { will-change: auto; }
+        #ra-training-engine-hero .ra-training-cta { transition: none; }
+      }
+
+      /* Flight foundations: soft white editorial panel and matching contact strip. */
+      #ra-training-foundations, #ra-training-foundations * { box-sizing: border-box; }
+      #ra-training-foundations { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr); align-items: center; gap: clamp(24px, 4vw, 62px); width: min(92%, 1540px); min-height: 420px; margin: 0 auto 34px; padding: clamp(34px, 4vw, 62px); overflow: hidden; border: 1px solid rgba(255,255,255,.95); border-radius: 34px; background: #fbfbfa; box-shadow: 0 16px 42px rgba(32,43,53,.06); direction: ltr; }
+      #ra-training-foundations .ra-foundations-copy { position: relative; z-index: 3; grid-column: 1; grid-row: 1; max-width: 600px; min-width: 0; }
+      #ra-training-foundations .ra-foundations-eyebrow { display: flex; align-items: center; gap: 16px; margin: 0 0 22px; color: #27384a; font: 650 10px/1.5 var(--serif, Arial, sans-serif); letter-spacing: .17em; }
+      #ra-training-foundations .ra-foundations-eyebrow::after { width: min(120px, 20vw); height: 1px; background: rgba(39,56,74,.24); content: ""; }
+      #ra-training-foundations h2 { max-width: 580px; margin: 0 0 18px; color: #142238; font: 650 clamp(28px, 3.3vw, 46px)/1.4 var(--persian, Vazirmatn, Tahoma, sans-serif); text-align: right; }
+      #ra-training-foundations .ra-foundations-description { max-width: 560px; margin: 0; color: #646b73; font: 400 clamp(14px, 1.2vw, 17px)/1.9 var(--persian, Vazirmatn, Tahoma, sans-serif); text-align: right; }
+      #ra-training-foundations .ra-foundations-topics { display: flex; align-items: stretch; gap: 0; max-width: 560px; margin-top: 28px; }
+      #ra-training-foundations .ra-foundations-topic { display: flex; flex: 1 1 0; flex-direction: column; align-items: center; gap: 8px; padding: 0 16px; color: #3e4b5a; font: 500 12px/1.45 var(--serif, Arial, sans-serif); text-align: center; }
+      #ra-training-foundations .ra-foundations-topic + .ra-foundations-topic { border-left: 1px solid rgba(39,56,74,.22); }
+      #ra-training-foundations .ra-foundations-icon { display: grid; width: 54px; height: 54px; place-items: center; border: 1px solid rgba(255,255,255,.9); border-radius: 15px; background: #f4f5f4; box-shadow: 0 5px 16px rgba(25,41,55,.05); color: #1c3046; }
+      #ra-training-foundations .ra-foundations-icon svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+      #ra-training-foundations .ra-foundations-visual { position: absolute; z-index: 1; top: 0; right: 0; width: 57%; height: 100%; overflow: hidden; background: radial-gradient(ellipse at 62% 52%, rgba(219,225,228,.46), transparent 65%), linear-gradient(180deg, rgba(250,250,249,0), rgba(230,234,235,.45)); -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 100%); }
+      #ra-training-foundations .ra-foundations-map { position: absolute; top: -7%; right: -3%; width: 108%; height: 87%; opacity: .29; }
+      #ra-training-foundations .ra-foundations-route { position: absolute; inset: 0; width: 100%; height: 100%; }
+      #ra-training-foundations .ra-foundations-route path { fill: none; stroke: rgba(255,255,255,.9); stroke-width: 3; stroke-dasharray: 1; }
+      #ra-training-foundations .ra-foundations-visual > img { position: absolute; z-index: 2; top: 2%; right: -2%; display: block; width: 88%; height: 78%; object-fit: contain; object-position: center right; filter: drop-shadow(0 14px 18px rgba(24,38,52,.13)); animation: ra-foundations-float 7s ease-in-out infinite; }
+      #ra-training-foundations .ra-foundations-clouds { position: absolute; z-index: 3; right: -5%; bottom: -6%; left: -5%; height: 39%; background: radial-gradient(ellipse at 12% 100%, rgba(255,255,255,.94) 0 17%, transparent 42%), radial-gradient(ellipse at 39% 105%, rgba(255,255,255,.94) 0 21%, transparent 47%), radial-gradient(ellipse at 72% 106%, rgba(255,255,255,.92) 0 24%, transparent 48%), linear-gradient(0deg, rgba(239,241,241,.72), transparent 90%); }
+      @keyframes ra-foundations-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+      #ra-training-contact { position: relative; isolation: isolate; display: flex; width: min(92%, 1540px); min-height: 148px; align-items: center; justify-content: space-between; gap: 24px; margin: 0 auto 62px; padding: 24px clamp(26px, 3.5vw, 56px); overflow: hidden; border: 1px solid rgba(255,255,255,.95); border-radius: 30px; background: linear-gradient(100deg, #fbfbfa 0%, #f6f6f4 55%, #fbfbfa 100%); box-shadow: 0 14px 34px rgba(32,43,53,.055); }
+      #ra-training-contact::before { position: absolute; z-index: 0; top: -210px; right: 20%; width: 470px; height: 470px; border: 1px solid rgba(24,43,62,.10); border-radius: 50%; background: repeating-conic-gradient(from -8deg, transparent 0deg 14deg, rgba(24,43,62,.045) 14deg 14.5deg, transparent 14.5deg 30deg); content: ""; mask-image: radial-gradient(circle, transparent 0 21%, #000 22% 66%, transparent 67%); pointer-events: none; }
+      #ra-training-contact::after { position: absolute; z-index: 0; top: -102px; right: 30%; width: 250px; height: 250px; border: 1px solid rgba(24,43,62,.13); border-radius: 50%; background: radial-gradient(circle, transparent 0 4px, rgba(24,43,62,.12) 4.5px 5px, transparent 5.5px), repeating-linear-gradient(0deg, transparent 0 27px, rgba(24,43,62,.06) 28px 29px), repeating-linear-gradient(90deg, transparent 0 27px, rgba(24,43,62,.06) 28px 29px); opacity: .42; content: ""; transform: rotate(-14deg); pointer-events: none; }
+      #ra-training-contact > div, #ra-training-contact > a { position: relative; z-index: 1; }
+      #ra-training-contact .training-section-kicker { margin: 0 0 7px; color: #586779; font: 650 10px/1.5 var(--serif, Arial, sans-serif); letter-spacing: .16em; }
+      #ra-training-contact h2 { margin: 0; color: #142238; font: 600 clamp(23px, 2.7vw, 36px)/1.45 var(--persian, Vazirmatn, Tahoma, sans-serif); }
+      #ra-training-contact .contact-cta-button { display: inline-flex; min-width: 220px; min-height: 58px; align-items: center; justify-content: center; gap: 15px; padding: 8px 24px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; background: #14263b; box-shadow: 0 10px 22px rgba(20,38,59,.14); color: #fff; font: 500 14px/1.5 var(--persian, Vazirmatn, Tahoma, sans-serif); text-decoration: none; transition: transform .2s ease, background .2s ease; }
+      #ra-training-contact .contact-cta-button:hover { background: #1e3855; transform: translateY(-2px); }
+      #ra-training-contact .contact-cta-arrow { font: 22px/1 var(--serif, Arial, sans-serif); }
+      @media (max-width: 900px) {
+        #ra-training-foundations { min-height: 390px; gap: 22px; padding: 32px; }
+        #ra-training-foundations .ra-foundations-visual { width: 53%; }
+        #ra-training-foundations .ra-foundations-topic { padding: 0 10px; font-size: 11px; }
+      }
+      @media (max-width: 600px) {
+        #ra-training-foundations { grid-template-columns: minmax(0,1fr); gap: 0; width: calc(100% - 28px); min-height: 0; margin-bottom: 20px; padding: 25px 21px 0; border-radius: 26px; }
+        #ra-training-foundations .ra-foundations-copy { grid-column: 1; grid-row: 1; }
+        #ra-training-foundations .ra-foundations-eyebrow { margin-bottom: 16px; font-size: 9px; }
+        #ra-training-foundations h2 { margin-bottom: 12px; font-size: clamp(25px, 7.2vw, 32px); }
+        #ra-training-foundations .ra-foundations-description { font-size: 13px; line-height: 1.85; }
+        #ra-training-foundations .ra-foundations-topics { margin-top: 22px; }
+        #ra-training-foundations .ra-foundations-topic { gap: 7px; padding: 0 7px; font-size: 10px; }
+        #ra-training-foundations .ra-foundations-icon { width: 46px; height: 46px; border-radius: 13px; }
+        #ra-training-foundations .ra-foundations-icon svg { width: 23px; height: 23px; }
+        #ra-training-foundations .ra-foundations-visual { position: relative; top: auto; right: auto; grid-column: 1; grid-row: 2; width: calc(100% + 42px); height: auto; min-height: 0; margin: 8px -21px 0; aspect-ratio: 1.4 / 1; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 17%, #000 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 17%, #000 100%); }
+        #ra-training-foundations .ra-foundations-map { top: 0; height: 100%; }
+        #ra-training-foundations .ra-foundations-visual > img { top: 0; right: -1%; width: 94%; height: 85%; }
+        #ra-training-contact { flex-direction: column; align-items: flex-start; width: calc(100% - 28px); min-height: 0; gap: 18px; margin-bottom: 42px; padding: 22px; border-radius: 25px; }
+        #ra-training-contact h2 { font-size: clamp(22px, 6.2vw, 28px); }
+        #ra-training-contact .contact-cta-button { min-width: 0; min-height: 52px; padding: 7px 20px; font-size: 13px; }
+        #ra-training-contact::before { right: 2%; }
+        #ra-training-contact::after { right: 31%; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #ra-training-foundations .ra-foundations-visual > img, #ra-training-contact .contact-cta-button { animation: none; transition: none; }
+      }
+    </style>
+  </head>
+  <body class="training-page">
+    <header class="site-header">
+      <a class="brand" href="index.html#home" aria-label="RAMZI AERO Home">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M19.8 2.5 22 16l12.2-5.6 1.3 2.4-12.7 7.1 1.1 15.7-2.2 2-2.1-2 1-15.7-12.7-7.1 1.3-2.4L19.4 16z" fill="currentColor" />
+          <path d="M19.8 22h2.3v13.7h-2.3z" fill="currentColor" />
+        </svg>
+        <span>RAMZI AERO</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
+        <span></span><span></span>
+      </button>
+
+      <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html#home">Home</a>
+        <a class="active" href="index.html#flight-training">Flight Training</a>
+        <a href="index.html#private-jet">Private Jet</a>
+        <a href="index.html#aviation-english">Aviation English</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+              <a href="my-account.html">My Account</a>
+</nav>
+    </header>
+
+    <main class="training-main">
+      <section class="ft-bento" id="training-hero" aria-labelledby="training-title">
+        <div class="ft-bento-grid">
+          <article class="ft-bento-card ft-bento-intro">
+            <span class="ft-bento-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h11M4 17h6" /></svg></span>
+            <div class="ft-bento-plane" aria-hidden="true"><img src="public/images/aviation-english-aircraft-transparent.png" alt="" /></div>
+            <div class="ft-bento-intro-copy">
+              <p class="ft-bento-kicker">RAMZI AERO <span>·</span> FLIGHT TRAINING</p>
+              <h1 class="ft-bento-title" id="training-title"><span>Ultralight</span><em>Flight Training</em></h1>
+              <p class="ft-bento-description" lang="fa" dir="rtl">مسیر آموزش پرواز فوق‌سبک را با شناخت هواگرد، یادگیری مبانی پرواز و آمادگی پیش از پرواز آغاز کنید؛ با تمرین هدفمند و توجه همیشگی به ایمنی.</p>
+              <a class="ft-bento-cta" href="#ra-training-engine-hero" lang="fa" dir="rtl">آشنایی با مسیر آموزش <span aria-hidden="true">←</span></a>
+              <div class="ft-bento-socials" aria-label="راه‌های ارتباطی">
+                <a href="https://www.instagram.com/ramzi.aero?srtk=MWMybWo4OHA3aDhhbg%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+                <a href="https://t.me/ramziaeroo" target="_blank" rel="noopener noreferrer" aria-label="Telegram">TG</a>
+                <a href="https://wa.me/989109109160" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WA</a>
+                <a href="tel:+982182807681" aria-label="Phone">☎</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="ft-bento-card ft-bento-main-image" aria-label="تصاویر آموزش پرواز فوق‌سبک">
+            <img class="ft-bento-slide is-active" src="public/images/flight-training-clouds.jpeg" alt="هواگرد در پرواز بر فراز ابرها" fetchpriority="high" />
+            <img class="ft-bento-slide" src="public/images/flight-training-cockpit.jpeg" alt="ابزارها و کنترل‌های داخل کابین هواگرد" aria-hidden="true" />
+            <img class="ft-bento-slide" src="public/images/flight-training-logbook.jpeg" alt="دفتر ثبت و یادداشت‌های آموزشی پرواز" aria-hidden="true" />
+            <div class="ft-bento-image-caption"><span>RAMZI AERO · ULTRALIGHT FLIGHT TRAINING</span><h2>Learn. Prepare. Fly.</h2></div>
+          </article>
+
+          <article class="ft-bento-card ft-bento-info">
+            <img class="ft-bento-info-image" src="public/images/flight-training-cockpit.jpeg" alt="ابزارها و کنترل‌های کابین برای آشنایی با هواگرد" loading="lazy" />
+            <span class="ft-bento-round-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <div><h2 lang="fa" dir="rtl">آمادگی، از زمین تا پرواز</h2><p lang="fa" dir="rtl">آشنایی با هواگرد و مرور چک‌لیست‌های پیش از پرواز، به تصمیم‌گیری آگاهانه‌تر و توجه پیوسته به ایمنی کمک می‌کند.</p></div>
+          </article>
+
+          <article class="ft-bento-card ft-bento-runway">
+            <img src="public/images/flight-training-runway.jpeg" alt="هواپیما و هدایت زمینی در باند فرودگاه" loading="lazy" />
+            <div class="ft-bento-image-caption"><span>FLIGHT TRAINING · PRE-FLIGHT PREPARATION</span></div>
+          </article>
+
+          <article class="ft-bento-card ft-bento-global">
+            <canvas class="ft-bento-globe" aria-hidden="true"></canvas>
+            <img class="ft-bento-global-image" src="public/images/flight-training-logbook.jpeg" alt="دفتر ثبت پرواز و ابزارهای پایهٔ هوانوردی" loading="lazy" />
+            <span class="ft-bento-round-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m4 12 16-8-7 16-2.5-6.5L4 12Z" /></svg></span>
+            <div><h2>Flight Foundations</h2><p lang="fa" dir="rtl">با یادگیری گام‌به‌گام مبانی پرواز، شناخت کابین و ارتباطات هوانوردی، برای ادامهٔ مسیر آموزشی آماده شوید.</p></div>
+          </article>
+
+          <div class="ft-bento-card ft-bento-marquee" aria-label="موضوعات آموزشی">
+            <div class="ft-bento-marquee-label"><span>Ultralight</span><span>Flight Training</span></div>
+            <div class="ft-bento-marquee-mask"><div class="ft-bento-marquee-track" aria-hidden="true">
+              <span>FLIGHT BASICS</span><span>AIRCRAFT FAMILIARIZATION</span><span>PRE-FLIGHT PREPARATION</span><span>SAFETY AWARENESS</span><span>COCKPIT FUNDAMENTALS</span>
+              <span>FLIGHT BASICS</span><span>AIRCRAFT FAMILIARIZATION</span><span>PRE-FLIGHT PREPARATION</span><span>SAFETY AWARENESS</span><span>COCKPIT FUNDAMENTALS</span>
+            </div></div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        (() => {
+          const section = document.getElementById("training-hero");
+          if (!section || section.dataset.initialized === "true") return;
+          section.dataset.initialized = "true";
+          const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          const slides = [...section.querySelectorAll(".ft-bento-slide")];
+          let activeSlide = 0;
+          if (slides.length > 1 && !reducedMotion) {
+            window.setInterval(() => {
+              if (!section.isConnected || document.hidden) return;
+              slides[activeSlide].classList.remove("is-active");
+              slides[activeSlide].setAttribute("aria-hidden", "true");
+              activeSlide = (activeSlide + 1) % slides.length;
+              slides[activeSlide].classList.add("is-active");
+              slides[activeSlide].removeAttribute("aria-hidden");
+            }, 5000);
+          }
+
+          const canvas = section.querySelector(".ft-bento-globe");
+          const context = canvas?.getContext("2d");
+          if (!canvas || !context) return;
+          const dots = [];
+          const rows = 25;
+          const columns = 56;
+          for (let row = 0; row <= rows; row++) {
+            const latitude = Math.PI * (row / rows - .5);
+            for (let column = 0; column < columns; column++) {
+              dots.push({ latitude, longitude: 2 * Math.PI * column / columns });
+            }
+          }
+          let width = 0, height = 0, angle = 0, frame = 0, visible = false;
+          const resizeCanvas = () => {
+            const rect = canvas.getBoundingClientRect();
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            width = rect.width;
+            height = rect.height;
+            canvas.width = Math.round(width * dpr);
+            canvas.height = Math.round(height * dpr);
+            context.setTransform(dpr, 0, 0, dpr, 0, 0);
+            drawGlobe();
+          };
+          const drawGlobe = () => {
+            context.clearRect(0, 0, width, height);
+            const radius = Math.min(width, height) * .43;
+            const centerX = width * .58;
+            const centerY = height * .55;
+            for (const dot of dots) {
+              const longitude = dot.longitude + angle;
+              const depth = Math.cos(dot.latitude) * Math.cos(longitude);
+              if (depth < 0) continue;
+              const x = centerX + Math.cos(dot.latitude) * Math.sin(longitude) * radius;
+              const y = centerY - Math.sin(dot.latitude) * radius;
+              context.beginPath();
+              context.arc(x, y, .7 + depth * .55, 0, Math.PI * 2);
+              context.fillStyle = `rgba(35,49,63,${.18 + depth * .32})`;
+              context.fill();
+            }
+          };
+          const animate = () => {
+            frame = 0;
+            if (!visible || reducedMotion || document.hidden) return;
+            angle += .002;
+            drawGlobe();
+            frame = window.requestAnimationFrame(animate);
+          };
+          const observer = new IntersectionObserver(([entry]) => {
+            visible = entry.isIntersecting;
+            if (visible && !frame && !reducedMotion) frame = window.requestAnimationFrame(animate);
+            if (!visible && frame) { window.cancelAnimationFrame(frame); frame = 0; }
+          }, { threshold: .05 });
+          observer.observe(canvas);
+          new ResizeObserver(resizeCanvas).observe(canvas);
+          resizeCanvas();
+          document.addEventListener("visibilitychange", () => {
+            if (document.hidden && frame) { window.cancelAnimationFrame(frame); frame = 0; }
+            else if (visible && !frame && !reducedMotion) frame = window.requestAnimationFrame(animate);
+          });
+        })();
+      </script>
+
+      <section id="ra-training-engine-hero" aria-labelledby="training-intro-title">
+        <div class="ra-training-hero-copy">
+          <p class="ra-training-kicker">RAMZI AERO · ULTRALIGHT FLIGHT TRAINING</p>
+          <h2 id="training-intro-title"><span>Choose</span><em>your way to fly</em></h2>
+          <p class="ra-training-description" lang="fa" dir="rtl">مسیر پرواز فوق‌سبک را با یادگیری اصول پرواز، شناخت هواگرد و آمادگی پیش از پرواز آغاز کنید. با تمرین هدفمند، توجه به شرایط و پایبندی به اصول ایمنی، برای تجربه‌ای آگاهانه در آسمان آماده شوید.</p>
+          <a class="ra-training-cta" href="#ra-training-foundations"><span>Discover</span><i aria-hidden="true">→</i></a>
+        </div>
+        <div class="ra-training-engine-visual" data-engine-scene>
+          <span class="ra-training-watermark" aria-hidden="true">RAMZI AERO</span>
+          <canvas class="ra-training-smoke" aria-hidden="true"></canvas>
+          <img class="ra-training-engine" src="public/images/ultralight-training-engine.png" alt="نمای موتور هواگرد برای آشنایی با اجزای فنی" loading="lazy" />
+        </div>
+      </section>
+      <script>
+        (() => {
+          const hero = document.getElementById("ra-training-engine-hero");
+          const scene = hero?.querySelector(".ra-training-engine-visual");
+          const canvas = scene?.querySelector(".ra-training-smoke");
+          const engine = scene?.querySelector(".ra-training-engine");
+          const context = canvas?.getContext("2d");
+          if (!hero || !scene || !canvas || !engine || !context) return;
+
+          const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          const particles = [];
+          let width = 0, height = 0, frame = 0, active = false, scrollTimer = 0;
+
+          const resize = () => {
+            const bounds = scene.getBoundingClientRect();
+            const scale = Math.min(window.devicePixelRatio || 1, 2);
+            width = bounds.width;
+            height = bounds.height;
+            canvas.width = Math.round(width * scale);
+            canvas.height = Math.round(height * scale);
+            context.setTransform(scale, 0, 0, scale, 0, 0);
+          };
+
+          const draw = () => {
+            frame = 0;
+            context.clearRect(0, 0, width, height);
+            for (let index = particles.length - 1; index >= 0; index--) {
+              const particle = particles[index];
+              particle.age += 1;
+              if (particle.age >= particle.life) { particles.splice(index, 1); continue; }
+              particle.x += particle.vx;
+              particle.y += particle.vy + Math.sin(particle.age / 8 + particle.phase) * .12;
+              const progress = particle.age / particle.life;
+              const radius = particle.radius + progress * width * .045;
+              const mist = context.createRadialGradient(particle.x, particle.y, 0, particle.x, particle.y, radius);
+              mist.addColorStop(0, `rgba(255,255,255,${Math.sin(progress * Math.PI) * .16})`);
+              mist.addColorStop(1, "rgba(255,255,255,0)");
+              context.fillStyle = mist;
+              context.beginPath();
+              context.arc(particle.x, particle.y, radius, 0, Math.PI * 2);
+              context.fill();
+            }
+            if (particles.length && active && !document.hidden) frame = window.requestAnimationFrame(draw);
+          };
+
+          const onScroll = () => {
+            const bounds = hero.getBoundingClientRect();
+            const progress = Math.max(0, Math.min(1, (window.innerHeight - bounds.top) / (window.innerHeight + bounds.height)));
+            if (!reducedMotion) engine.style.transform = `rotate(${(progress - .5) * 1.6}deg)`;
+            if (active && !reducedMotion && particles.length < 36) {
+              for (let count = 0; count < 2; count++) particles.push({ x: width * .9, y: height * .54 + (Math.random() - .5) * 7, vx: width * (.0015 + Math.random() * .0015), vy: (Math.random() - .5) * .45, age: 0, life: 48 + Math.random() * 30, radius: 3 + Math.random() * 5, phase: Math.random() * 6.28 });
+              if (!frame) frame = window.requestAnimationFrame(draw);
+            }
+            window.clearTimeout(scrollTimer);
+            scrollTimer = window.setTimeout(() => { if (frame && !particles.length) { window.cancelAnimationFrame(frame); frame = 0; } }, 120);
+          };
+
+          resize();
+          new ResizeObserver(resize).observe(scene);
+          new IntersectionObserver(([entry]) => { active = entry.isIntersecting; if (!active) { particles.length = 0; context.clearRect(0, 0, width, height); } }, { threshold: .02 }).observe(hero);
+          window.addEventListener("scroll", onScroll, { passive: true });
+          window.addEventListener("resize", onScroll, { passive: true });
+          onScroll();
+        })();
+      </script>
+
+      <section id="ra-training-foundations" aria-labelledby="ra-training-foundations-title">
+        <div class="ra-foundations-copy">
+          <p class="ra-foundations-eyebrow"><span>FLIGHT TRAINING · FLIGHT FOUNDATIONS</span></p>
+          <h2 id="ra-training-foundations-title" lang="fa" dir="rtl">آمادگی دقیق، پرواز ایمن</h2>
+          <p class="ra-foundations-description" lang="fa" dir="rtl">با شناخت هواگرد، یادگیری مبانی پرواز و مرور چک‌لیست‌های پیش از پرواز، مسیر آموزش فوق‌سبک را گام‌به‌گام و با توجه همیشگی به ایمنی دنبال کنید.</p>
+          <div class="ra-foundations-topics" aria-label="موضوعات آموزشی">
+            <article class="ra-foundations-topic">
+              <span class="ra-foundations-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 13.5 20.5 5 15 21l-3.2-6.1L3 13.5Z"/><path d="m11.8 14.8 4.6-4.6"/></svg></span>
+              <span>Flight<br>Basics</span>
+            </article>
+            <article class="ra-foundations-topic">
+              <span class="ra-foundations-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <span>Pre-flight<br>Preparation</span>
+            </article>
+            <article class="ra-foundations-topic">
+              <span class="ra-foundations-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6.5A3.5 3.5 0 0 1 6.5 3h11A3.5 3.5 0 0 1 21 6.5v7a3.5 3.5 0 0 1-3.5 3.5H11l-5 4v-4.5a3.5 3.5 0 0 1-3-3.5v-6.5Z"/><path d="M8 9h8M8 12h5"/></svg></span>
+              <span>Aircraft<br>Familiarity</span>
+            </article>
+          </div>
+        </div>
+        <div class="ra-foundations-visual" aria-hidden="true">
+          <svg class="ra-foundations-map" viewBox="0 0 800 440" preserveAspectRatio="xMidYMid meet">
+            <defs><pattern id="ra-map-dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.35" fill="#8c9292"/></pattern></defs>
+            <g fill="url(#ra-map-dots)" opacity=".48">
+              <path d="m90 82 30-22 48 4 25 17 32 4 15 22-12 18-26 2-12 22-24 7-11 28-20 11-8 32-16 9-9-27-19-17-3-29-21-16 6-25-11-17 16-23Zm90 160 21 10 12 26-9 28-13 35-15 29-18-8-5-25-13-24 6-28 14-17 2-23Zm117-190 29-19 42 6 21 17 38 6 15 18 41 7 21 17 45 6 30-8 37 13 23 22-16 13-34-5-22 14-24-1-20 18-27-7-12 19-23 1-7 24-16 2-11-29-17-15-29 4-18-12-33-1-11-16-29 3-11-19-25 3-12-15-23 3-20-18 11-23Z"/>
+              <path d="m416 224 27 8 22 20 9 27-11 24-18 17-8 31-20 11-14-22-4-29-13-19 3-25 14-19-7-24Zm145-91 18-10 20 7 4 17-17 12-19-6-6-20Zm54 87 23-14 37 6 19 16-8 19-34 2-18 15-24-9-9-19 14-16Z"/>
+            </g>
+          </svg>
+          <svg class="ra-foundations-route" viewBox="0 0 800 440"><path d="M70 330C210 300 228 235 345 210s215-15 365-145"/></svg>
+          <img src="public/images/aviation-english-aircraft-transparent.png" alt="هواگردی در مسیر آموزش پرواز" loading="lazy" />
+          <div class="ra-foundations-clouds"></div>
+        </div>
+      </section>
+
+      <section class="training-contact" id="ra-training-contact">
+        <div>
+          <p class="training-section-kicker">START YOUR JOURNEY</p>
+          <h2 lang="fa" dir="rtl">برای آشنایی بیشتر آماده‌ای؟</h2>
+        </div>
+        <a class="contact-cta-button" href="https://wa.me/989109109160" target="_blank" rel="noopener noreferrer">گفتگو در واتساپ <span class="contact-cta-arrow" aria-hidden="true">→</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="about">
+      <div class="footer-main">
+        <div class="footer-brand-block">
+          <a class="brand footer-brand" href="index.html#home" aria-label="RAMZI AERO Home">
+            <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+              <path d="M19.8 2.5 22 16l12.2-5.6 1.3 2.4-12.7 7.1 1.1 15.7-2.2 2-2.1-2 1-15.7-12.7-7.1 1.3-2.4L19.4 16z" fill="currentColor" />
+              <path d="M19.8 22h2.3v13.7h-2.3z" fill="currentColor" />
+            </svg>
+            <span>RAMZI AERO</span>
+          </a>
+          <p>از نخستین قدم تا دنیای پرواز</p>
+        </div>
+
+        <nav class="footer-column" aria-label="Quick links">
+          <h2>دسترسی سریع</h2>
+          <a href="index.html#home">صفحهٔ اصلی</a>
+          <a href="index.html#flight-training">آموزش خلبانی فوق‌سبک</a>
+          <a href="index.html#aviation-english">زبان انگلیسی هوانوردی</a>
+          <a href="index.html#private-jet">جت شخصی</a>
+        </nav>
+
+        <div class="footer-column footer-contact">
+          <h2>تماس با ما</h2>
+          <a href="tel:+982182807681" dir="ltr">021 8280 7681</a>
+          <a href="https://wa.me/989109109160" target="_blank" rel="noopener noreferrer" dir="ltr">WhatsApp · 0910 910 9160</a>
+        </div>
+
+        <div class="footer-column footer-follow">
+          <h2>ما را دنبال کنید</h2>
+          <div class="social-links">
+            <a href="https://t.me/ramziaeroo" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 3-3.2 18-6.1-5.3-3.3 3.2.5-5.6L19 5.1 7.1 13.4 2 11.8 21 3Z" /></svg>
+            </a>
+            <a href="https://www.instagram.com/ramzi.aero?srtk=MWMybWo4OHA3aDhhbg%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle class="social-icon-dot" cx="17.5" cy="6.8" r=".8" /></svg>
+            </a>
+            <a href="https://wa.me/989109109160" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.7a8 8 0 0 1-11.8 7L4 20l1.3-4A8 8 0 1 1 20 11.7Z" /><path d="M9 8.3c.3-.5.6-.5.9-.5.2 0 .4 0 .6.5l.8 1.7c.1.3.1.5-.1.7l-.6.7c.5 1 1.3 1.8 2.4 2.3l.7-.7c.2-.2.4-.2.7-.1l1.6.8c.4.2.5.4.5.6 0 .3-.2.7-.5.9-.5.4-1.1.6-1.8.5-1.1-.1-2.7-.9-4.1-2.2-1.3-1.3-2.1-2.9-2.2-4 0-.5.3-1 .6-1.2Z" /></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <small>© 2026 RAMZI AERO — تمامی حقوق محفوظ است.</small>
+        <a href="tel:+982182807681" dir="ltr">021 8280 7681</a>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

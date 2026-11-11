@@ -1,0 +1,40 @@
+<!-- RAMZI AERO | Ultralight Flight Training Hero | Paste into one Elementor HTML widget.
+     In WordPress, replace the image src below with the engine image URL from Media Library. -->
+<section id="ra-training-engine-hero" dir="rtl" aria-labelledby="ra-training-title">
+  <div class="ra-training-hero-copy">
+    <p class="ra-training-kicker">RAMZI AERO · ULTRALIGHT FLIGHT TRAINING</p>
+    <h2 id="ra-training-title"><span>Choose</span><em>your way to fly</em></h2>
+    <p class="ra-training-description" lang="fa" dir="rtl">مسیر پرواز فوق‌سبک را با یادگیری اصول پرواز، شناخت هواگرد و آمادگی پیش از پرواز آغاز کنید. با تمرین هدفمند، توجه به شرایط و پایبندی به اصول ایمنی، برای تجربه‌ای آگاهانه در آسمان آماده شوید.</p>
+    <a class="ra-training-cta" href="#training-points"><span>Discover</span><i aria-hidden="true">→</i></a>
+  </div>
+  <div class="ra-training-engine-visual" aria-label="موتور هواپیما">
+    <span class="ra-training-watermark" aria-hidden="true">RAMZI AERO</span>
+    <canvas class="ra-training-smoke" aria-hidden="true"></canvas>
+    <img class="ra-training-engine" src="public/images/ultralight-training-engine.png" alt="نمای نزدیک موتور توربوفن با بدنهٔ فلزی و پره‌های داخلی" loading="lazy">
+  </div>
+</section>
+<style>
+#ra-training-engine-hero{--ra-en:var(--en-font,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);--ra-fa:var(--persian,Vazirmatn,Tahoma,sans-serif);--ra-ink:#0b0b0c;--ra-muted:#707070;position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(28px,5vw,76px);width:min(86%,1620px);min-height:clamp(440px,35vw,610px);margin:0 auto 62px;padding:clamp(36px,5vw,82px);overflow:hidden;box-sizing:border-box;direction:rtl;border:7px solid rgba(255,255,255,.9);border-radius:clamp(26px,3vw,48px);background:#e4e4e5;box-shadow:0 18px 42px rgba(0,0,0,.065)}
+#ra-training-engine-hero *{box-sizing:border-box}
+#ra-training-engine-hero:before{position:absolute;z-index:0;top:50%;right:0;left:44%;width:56%;overflow:hidden;transform:translateY(-50%);color:rgba(105,112,122,.11);content:"RAMZI AERO";font:850 clamp(66px,8.7vw,132px)/1 var(--ra-en);letter-spacing:-.09em;text-align:center;white-space:nowrap;pointer-events:none}
+#ra-training-engine-hero .ra-training-hero-copy{position:relative;z-index:2;min-width:0}
+#ra-training-engine-hero .ra-training-kicker{margin:0 0 17px;color:#777;font:650 10px/1.6 var(--ra-en);letter-spacing:.16em}
+#ra-training-engine-hero h2{max-width:100%;margin:0 0 20px;color:var(--ra-ink);font:750 clamp(48px,5.1vw,78px)/.98 var(--ra-en);letter-spacing:-.065em}
+#ra-training-engine-hero h2 span,#ra-training-engine-hero h2 em{display:block;direction:ltr;unicode-bidi:isolate}
+#ra-training-engine-hero h2 em{margin-top:.11em;color:#777;font:italic 400 .76em/1 Georgia,"Times New Roman",serif;letter-spacing:-.065em;white-space:nowrap}
+#ra-training-engine-hero .ra-training-description{max-width:470px;margin:0 0 23px;color:var(--ra-muted);font:400 clamp(13px,1.1vw,16px)/1.9 var(--ra-fa);text-align:right}
+#ra-training-engine-hero .ra-training-cta{display:inline-flex;min-height:56px;align-items:center;gap:17px;padding:6px 7px 6px 25px;border-radius:999px;background:#090909;box-shadow:0 10px 22px rgba(0,0,0,.15);color:#fff;font:650 14px var(--ra-en);text-decoration:none;transition:transform .2s ease}
+#ra-training-engine-hero .ra-training-cta:hover{transform:translateY(-2px)}
+#ra-training-engine-hero .ra-training-cta i{display:grid;width:42px;height:42px;place-items:center;border-radius:50%;background:#c9a45b;color:#111;font-size:21px;font-style:normal}
+#ra-training-engine-hero .ra-training-engine-visual{position:relative;display:grid;min-width:0;min-height:300px;height:100%;place-items:center;overflow:hidden;isolation:isolate;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%)}
+#ra-training-engine-hero .ra-training-engine-visual:before{position:absolute;z-index:0;inset:8%;border-radius:50%;background:rgba(255,255,255,.75);content:"";filter:blur(55px)}
+#ra-training-engine-hero .ra-training-watermark{display:none}
+#ra-training-engine-hero .ra-training-engine{position:relative;z-index:2;display:block;width:170%;max-width:none;max-height:none;height:auto;object-fit:contain;filter:drop-shadow(0 18px 16px rgba(18,32,44,.13));transform:rotate(0deg);will-change:transform}
+#ra-training-engine-hero .ra-training-smoke{position:absolute;z-index:3;inset:0;width:100%;height:100%;pointer-events:none}
+@media(max-width:900px) and (min-width:601px){#ra-training-engine-hero{width:min(90%,1000px);min-height:440px;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:24px;padding:38px}#ra-training-engine-hero h2{font-size:clamp(42px,6vw,62px)}#ra-training-engine-hero h2 em{white-space:normal}#ra-training-engine-hero .ra-training-engine-visual{min-height:280px}}
+@media(max-width:600px){#ra-training-engine-hero{width:calc(100% - 28px);min-height:0;grid-template-columns:minmax(0,1fr);gap:8px;margin-bottom:38px;padding:27px 22px 18px;border-width:5px;border-radius:25px}#ra-training-engine-hero:before{top:72%;left:0;width:100%;font-size:clamp(70px,18vw,112px)}#ra-training-engine-hero .ra-training-kicker{margin-bottom:12px;font-size:9px}#ra-training-engine-hero h2{margin-bottom:15px;font-size:clamp(36px,9.6vw,52px)}#ra-training-engine-hero h2 em{white-space:normal}#ra-training-engine-hero .ra-training-description{max-width:100%;margin-bottom:16px;font-size:14px;line-height:1.75}#ra-training-engine-hero .ra-training-cta{min-height:49px;gap:13px;padding-left:20px;font-size:13px}#ra-training-engine-hero .ra-training-cta i{width:35px;height:35px;font-size:18px}#ra-training-engine-hero .ra-training-engine-visual{width:100%;min-height:0;height:auto;aspect-ratio:1.5/1}#ra-training-engine-hero .ra-training-engine{width:150%;max-height:none}}
+@media(prefers-reduced-motion:reduce){#ra-training-engine-hero .ra-training-engine,#ra-training-engine-hero .ra-training-cta{transition:none}}
+</style>
+<script>
+(()=>{const hero=document.getElementById("ra-training-engine-hero"),scene=hero?.querySelector(".ra-training-engine-visual"),canvas=scene?.querySelector(".ra-training-smoke"),engine=scene?.querySelector(".ra-training-engine"),ctx=canvas?.getContext("2d");if(!hero||!scene||!ctx)return;const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,particles=[];let w=0,h=0,p=0,last=0,frame=0;const resize=()=>{const r=scene.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);w=r.width;h=r.height;canvas.width=Math.round(w*d);canvas.height=Math.round(h*d);ctx.setTransform(d,0,0,d,0,0)};new ResizeObserver(resize).observe(scene);const emit=()=>{if(p<.04||particles.length>100)return;const s=w/600;for(let i=0;i<2;i++)particles.push({x:w*.94,y:h*.54+(Math.random()-.5)*5*s,vx:(1.1+Math.random()*1.4)*s,vy:(Math.random()-.5)*.6*s,age:0,life:(75+Math.random()*70)*s,r:(3+Math.random()*5)*s,phase:Math.random()*6.28})};const draw=t=>{const dt=Math.min(2,(t-(last||t))/16.67);last=t;ctx.clearRect(0,0,w,h);emit();for(let i=particles.length-1;i>=0;i--){const q=particles[i];q.age+=dt;if(q.age>=q.life){particles.splice(i,1);continue}const n=q.age/q.life;q.x+=q.vx*dt;q.y+=(q.vy+Math.sin(t/350+q.phase)*.18)*dt;const r=q.r+n*w*.045,g=ctx.createRadialGradient(q.x,q.y,0,q.x,q.y,r);g.addColorStop(0,`rgba(255,255,255,${Math.sin(n*Math.PI)*.11})`);g.addColorStop(1,"rgba(255,255,255,0)");ctx.fillStyle=g;ctx.beginPath();ctx.arc(q.x,q.y,r,0,Math.PI*2);ctx.fill()}if(particles.length||p>.04)frame=requestAnimationFrame(draw);else frame=0};const update=()=>{const r=hero.getBoundingClientRect();p=Math.max(0,Math.min(1,(innerHeight-r.top)/(innerHeight+r.height)));if(!reduce)engine.style.transform=`rotate(${(p-.5)*2}deg)`;if(!reduce&&!frame){last=0;frame=requestAnimationFrame(draw)}};resize();addEventListener("scroll",update,{passive:true});addEventListener("resize",update,{passive:true});update()})();
+</script>

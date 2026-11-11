@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Five ways to fly private — Elementor section</title>
+</head>
+<body style="margin:0;background:#dacfc0;padding:28px 0">
+<!-- Five ways to fly private: copy this complete file body into an Elementor HTML widget. Update image paths and the #contact CTA target if needed. -->
+<style>
+/* Five ways to fly private service selector */
+.fa-services-section { --fa-svc-ink: var(--ink, #111315); --fa-svc-persian-font: var(--fa-font, "Vazirmatn", Tahoma, sans-serif); --fa-svc-english-font: var(--en-font, "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif); width: min(82%, 1420px); margin: 0 auto 76px; color: var(--fa-svc-ink); }
+.fa-services-heading { margin-bottom: 28px; }
+.fa-services-heading > p { margin: 0 0 14px; color: #68747a; font-size: 9px; letter-spacing: .24em; }
+.fa-services-heading h2 { display: flex; flex-wrap: wrap; gap: .18em; margin: 0; font-family: var(--fa-svc-english-font); font-size: clamp(38px, 5vw, 66px); font-weight: 550; letter-spacing: -.065em; line-height: .98; }
+.fa-services-heading h2 em { color: #72787a; font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+.fa-services-layout { display: grid; grid-template-columns: minmax(250px, 5fr) minmax(0, 7fr); align-items: stretch; gap: clamp(20px, 3vw, 48px); }
+.fa-services-list-wrap { display: flex; align-items: center; min-width: 0; }
+.fa-services-list { display: flex; width: 100%; flex-direction: column; gap: 7px; margin: 0; padding: 0; }
+.fa-services-tab { display: flex; width: 100%; min-height: 80px; align-items: center; justify-content: space-between; gap: 16px; padding: 15px 20px; border: 1px solid transparent; border-radius: 16px; background: transparent; color: #1b2124; text-align: left; cursor: pointer; transition: background-color .28s ease, border-color .28s ease, transform .28s ease, box-shadow .28s ease; }
+.fa-services-tab:hover { background: rgba(255,255,255,.42); }
+.fa-services-tab.is-active { border-color: rgba(255,255,255,.88); background: rgba(255,255,255,.78); box-shadow: 0 8px 25px rgba(36,39,39,.06), inset 0 1px rgba(255,255,255,.8); transform: translateX(4px); }
+.fa-services-tab:focus-visible { outline: 2px solid #b9955b; outline-offset: 3px; }
+.fa-services-tab > span:first-child { display: flex; min-width: 0; flex: 1; flex-direction: column; gap: 5px; }
+.fa-services-tab b { font-family: var(--fa-svc-english-font); font-size: clamp(15px, 1.25vw, 18px); font-weight: 550; letter-spacing: -.02em; }
+.fa-services-tab-line { color: #68747a; font-family: var(--fa-svc-persian-font); font-size: 12px; line-height: 1.6; }
+.fa-services-tab-arrow { display: grid; width: 30px; height: 30px; flex: 0 0 30px; place-items: center; border: 1px solid rgba(185,149,91,.4); border-radius: 50%; color: #8a704b; font-size: 15px; transition: transform .28s ease, background-color .28s ease; }
+.fa-services-tab.is-active .fa-services-tab-arrow { transform: rotate(45deg); background: rgba(185,149,91,.1); }
+.fa-services-panel { min-width: 0; padding: clamp(18px, 2.4vw, 34px); border-radius: 26px; background: #eae9e5; transition: opacity .2s ease, transform .2s ease; }
+.fa-services-panel.is-changing { opacity: .25; transform: translateY(5px); }
+.fa-services-visual { isolation: isolate; position: relative; min-height: 380px; overflow: hidden; border-radius: 18px; background: #384953; color: #fff; }
+.fa-services-image, .fa-services-image-shade { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; }
+.fa-services-image { display: block; object-fit: cover; object-position: center 53%; transition: transform .7s cubic-bezier(.2,.75,.25,1), opacity .22s ease; }
+.fa-services-panel:hover .fa-services-image { transform: scale(1.025); }
+.fa-services-image-shade { z-index: -1; background: linear-gradient(180deg, rgba(8,13,17,.42), rgba(8,13,17,.03) 45%, rgba(8,13,17,.62)); }
+.fa-services-image-copy { position: absolute; top: clamp(24px, 5%, 42px); left: 20px; right: 20px; text-align: center; text-shadow: 0 2px 18px rgba(0,0,0,.24); }
+.fa-services-tagline { margin: 0 0 5px; font-family: var(--fa-svc-english-font); font-size: clamp(30px, 3.4vw, 48px); font-weight: 550; letter-spacing: -.055em; line-height: 1.05; }
+.fa-services-subtitle { margin: 0; color: rgba(255,255,255,.92); font-family: Georgia, "Times New Roman", serif; font-size: clamp(17px, 1.8vw, 23px); font-style: italic; }
+.fa-services-chips { position: absolute; right: 18px; bottom: 18px; left: 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; padding: 12px 16px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; background: rgba(24,30,33,.38); color: #fff; font-family: var(--fa-svc-english-font); font-size: 11px; backdrop-filter: blur(14px) saturate(1.25); -webkit-backdrop-filter: blur(14px) saturate(1.25); }
+.fa-services-chips i { width: 4px; height: 4px; border-radius: 50%; background: #d4b47d; }
+.fa-services-panel-footer { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-top: 21px; }
+.fa-services-panel-copy { min-width: 0; }
+.fa-services-name { margin: 0 0 5px; font-family: var(--fa-svc-english-font); font-size: 18px; font-weight: 600; }
+.fa-services-description { margin: 0; color: #68747a; font-family: var(--fa-svc-persian-font); font-size: 12px; line-height: 1.8; }
+.fa-services-cta { display: inline-flex; min-height: 46px; flex: 0 0 auto; align-items: center; justify-content: center; gap: 11px; padding: 0 22px; border-radius: 999px; background: #111315; color: #fff; font-family: var(--fa-svc-english-font); font-size: 12px; transition: transform .2s ease, background-color .2s ease; }
+.fa-services-cta:hover { transform: translateY(-2px); background: #303638; }
+.fa-services-cta:focus-visible { outline: 2px solid #b9955b; outline-offset: 3px; }
+.fa-services-cta span { font-size: 15px; }
+@media (max-width: 900px) {
+  .fa-services-section { width: min(88%, 760px); }
+  .fa-services-layout { grid-template-columns: 1fr; gap: 22px; }
+  .fa-services-list-wrap { order: 0; }
+  .fa-services-panel { order: 1; }
+  .fa-services-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fa-services-tab { min-height: 78px; padding: 13px 15px; }
+  .fa-services-tab.is-active { transform: none; }
+  .fa-services-visual { min-height: 400px; }
+}
+@media (max-width: 600px) {
+  .fa-services-section { width: calc(100% - 28px); margin-bottom: 48px; }
+  .fa-services-heading { margin-bottom: 20px; }
+  .fa-services-heading h2 { font-size: clamp(35px, 10vw, 48px); }
+  .fa-services-layout { gap: 16px; }
+  .fa-services-list { grid-template-columns: 1fr; gap: 5px; }
+  .fa-services-tab { min-height: 65px; padding: 10px 13px; border-radius: 13px; }
+  .fa-services-tab b { font-size: 15px; }
+  .fa-services-tab-line { font-size: 11px; }
+  .fa-services-panel { padding: 13px; border-radius: 18px; }
+  .fa-services-visual { min-height: 350px; border-radius: 13px; }
+  .fa-services-image-copy { top: 22px; }
+  .fa-services-chips { right: 12px; bottom: 12px; left: 12px; gap: 7px; padding: 9px 10px; border-radius: 15px; font-size: 9px; }
+  .fa-services-panel-footer { flex-direction: column; align-items: stretch; gap: 14px; padding-top: 16px; }
+  .fa-services-name { font-size: 16px; }
+  .fa-services-cta { width: 100%; min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fa-services-section *, .fa-services-section *::before, .fa-services-section *::after { scroll-behavior: auto; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+</style>
+<section class="fa-services-section" id="fa-services" aria-labelledby="fa-services-heading">
+        <header class="fa-services-heading">
+          <p>RAMZI AERO · PRIVATE FLIGHT OPTIONS</p>
+          <h2 id="fa-services-heading"><span>Five ways</span> <em>to fly private</em></h2>
+        </header>
+
+        <div class="fa-services-layout">
+          <div class="fa-services-list-wrap">
+            <div class="fa-services-list" id="fa-services-list" role="tablist" aria-label="Private flight services" aria-orientation="vertical">
+              <button class="fa-services-tab" id="fa-services-tab-empty-legs" type="button" role="tab" aria-selected="false" aria-controls="fa-services-panel" tabindex="-1" data-service="empty-legs">
+                <span><b>Empty Legs</b><span class="fa-services-tab-line" lang="fa" dir="rtl">پروازهای یک‌طرفه با نرخ‌های ویژه</span></span><span class="fa-services-tab-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button class="fa-services-tab" id="fa-services-tab-shared-flight" type="button" role="tab" aria-selected="false" aria-controls="fa-services-panel" tabindex="-1" data-service="shared-flight">
+                <span><b>Shared Flight</b><span class="fa-services-tab-line" lang="fa" dir="rtl">رزرو صندلی در پرواز خصوصی مشترک</span></span><span class="fa-services-tab-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button class="fa-services-tab" id="fa-services-tab-discovery-flight" type="button" role="tab" aria-selected="false" aria-controls="fa-services-panel" tabindex="-1" data-service="discovery-flight">
+                <span><b>Discovery Flight</b><span class="fa-services-tab-line" lang="fa" dir="rtl">تجربهٔ نخست پرواز با مربی گواهی‌شده</span></span><span class="fa-services-tab-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button class="fa-services-tab" id="fa-services-tab-private-charter" type="button" role="tab" aria-selected="false" aria-controls="fa-services-panel" tabindex="-1" data-service="private-charter">
+                <span><b>Private Charter</b><span class="fa-services-tab-line" lang="fa" dir="rtl">هواپیمای اختصاصی، برنامهٔ سفر دلخواه</span></span><span class="fa-services-tab-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button class="fa-services-tab is-active" id="fa-services-tab-helicopter-flight" type="button" role="tab" aria-selected="true" aria-controls="fa-services-panel" tabindex="0" data-service="helicopter-flight">
+                <span><b>Helicopter Flight</b><span class="fa-services-tab-line" lang="fa" dir="rtl">پرواز سریع میان هلی‌پدهای شهری</span></span><span class="fa-services-tab-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="fa-services-panel" id="fa-services-panel" role="tabpanel" aria-live="polite" aria-labelledby="fa-services-tab-helicopter-flight" tabindex="0">
+            <div class="fa-services-visual">
+              <img class="fa-services-image" src="public/images/five-ways-helicopter.png" alt="هلیکوپتر در پرواز بر فراز شهر هنگام غروب" loading="lazy" />
+              <div class="fa-services-image-shade" aria-hidden="true"></div>
+              <div class="fa-services-image-copy">
+                <h3 class="fa-services-tagline">Skip the Traffic</h3>
+                <p class="fa-services-subtitle">Land closer to where you’re going</p>
+              </div>
+              <div class="fa-services-chips" aria-label="Helicopter Flight highlights">
+                <span>City helipads</span><i aria-hidden="true"></i><span>Airport transfers</span><i aria-hidden="true"></i><span>Up to 6 seats</span>
+              </div>
+            </div>
+            <div class="fa-services-panel-footer">
+              <div class="fa-services-panel-copy">
+                <h4 class="fa-services-name">Helicopter Flight</h4>
+                <p class="fa-services-description" lang="fa" dir="rtl">بین هلی‌پدهای شهری، فرودگاه‌ها و مقصدهای نزدیک، سریع و آسوده جابه‌جا شوید.</p>
+              </div>
+              <a class="fa-services-cta" href="#contact">Book the Flight <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+<script>
+const privateServicesRoot = document.querySelector(".fa-services-section");
+
+if (privateServicesRoot && !privateServicesRoot.dataset.initialized) {
+  privateServicesRoot.dataset.initialized = "true";
+  const serviceTabs = [...privateServicesRoot.querySelectorAll(".fa-services-tab")];
+  const servicePanel = privateServicesRoot.querySelector(".fa-services-panel");
+  const serviceImage = privateServicesRoot.querySelector(".fa-services-image");
+  const serviceTagline = privateServicesRoot.querySelector(".fa-services-tagline");
+  const serviceSubtitle = privateServicesRoot.querySelector(".fa-services-subtitle");
+  const serviceChips = privateServicesRoot.querySelector(".fa-services-chips");
+  const serviceName = privateServicesRoot.querySelector(".fa-services-name");
+  const serviceDescription = privateServicesRoot.querySelector(".fa-services-description");
+  const serviceCta = privateServicesRoot.querySelector(".fa-services-cta");
+  const privateServices = {
+    "empty-legs": {
+      name: "Empty Legs",
+      line: "One-way flights at reduced fares",
+      tagline: "A Smarter Way to Fly",
+      subtitle: "Make the most of a repositioning flight",
+      body: "وقتی هواپیما برای سفر بعدی جابه‌جا می‌شود، گاهی می‌توانید همان مسیر را با هزینه‌ای مناسب‌تر رزرو کنید.",
+      chips: ["Whole aircraft", "One way", "Value fares"],
+      image: "public/images/service-private-jet.png",
+      alt: "هواپیمای مسافربری روی باند فرودگاه هنگام غروب",
+      cta: "See This Week"
+    },
+    "shared-flight": {
+      name: "Shared Flight",
+      line: "Your own seat on a private flight",
+      tagline: "Your Seat, Your Journey",
+      subtitle: "A private flight shared with others",
+      body: "یک صندلی در پروازی خصوصی رزرو کنید و تجربهٔ سفر از ترمینال اختصاصی را با مسافران دیگر به اشتراک بگذارید.",
+      chips: ["Per-seat pricing", "Private terminals", "Select routes"],
+      image: "public/images/service-aviation-english.png",
+      alt: "جت خصوصی آمادهٔ پرواز در فرودگاه",
+      cta: "Find a Seat"
+    },
+    "discovery-flight": {
+      name: "Discovery Flight",
+      line: "Your first time at the controls",
+      tagline: "Take the First Step",
+      subtitle: "Discover the view from the flight deck",
+      body: "با همراهی مربی پرواز، تجربه‌ای نخستین از پرواز و آشنایی با دنیای خلبانی داشته باشید؛ نیازی به تجربهٔ قبلی نیست.",
+      chips: ["No experience needed", "Flight instructor", "A memorable gift"],
+      image: "public/images/faq/above-the-clouds.jpg",
+      alt: "جت در حال پرواز بر فراز ابرها",
+      cta: "Book a Flight"
+    },
+    "private-charter": {
+      name: "Private Charter",
+      line: "Your aircraft, your schedule",
+      tagline: "Fly on Your Schedule",
+      subtitle: "A private aircraft for your journey",
+      body: "برای مسیر و زمان دلخواهتان، پرواز اختصاصی هماهنگ کنید و جزئیات سفر را متناسب با نیاز خود پیش ببرید.",
+      chips: ["Flexible routes", "Private cabin", "Personal planning"],
+      image: "public/images/faq/night-charter.jpg",
+      alt: "جت خصوصی در فرودگاه شبانه",
+      cta: "Request a Quote"
+    },
+    "helicopter-flight": {
+      name: "Helicopter Flight",
+      line: "Skip the traffic, land closer",
+      tagline: "Skip the Traffic",
+      subtitle: "Land closer to where you’re going",
+      body: "بین هلی‌پدهای شهری، فرودگاه‌ها و مقصدهای نزدیک، سریع و آسوده جابه‌جا شوید.",
+      chips: ["City helipads", "Airport transfers", "Up to 6 seats"],
+      image: "public/images/five-ways-helicopter.png",
+      alt: "هلیکوپتر در پرواز بر فراز شهر هنگام غروب",
+      cta: "Book the Flight"
+    }
+  };
+  let selectedService = -1;
+  let panelSwapTimer;
+
+  function renderPrivateService(index, animate = true) {
+    const tab = serviceTabs[index];
+    const data = privateServices[tab?.dataset.service];
+    if (!data || index === selectedService) return;
+    selectedService = index;
+
+    serviceTabs.forEach((item, itemIndex) => {
+      const selected = itemIndex === index;
+      item.classList.toggle("is-active", selected);
+      item.setAttribute("aria-selected", String(selected));
+      item.tabIndex = selected ? 0 : -1;
+    });
+
+    servicePanel.setAttribute("aria-labelledby", tab.id);
+    if (animate) servicePanel.classList.add("is-changing");
+    window.clearTimeout(panelSwapTimer);
+    panelSwapTimer = window.setTimeout(() => {
+      serviceImage.src = data.image;
+      serviceImage.alt = data.alt;
+      serviceTagline.textContent = data.tagline;
+      serviceSubtitle.textContent = data.subtitle;
+      serviceName.textContent = data.name;
+      serviceDescription.textContent = data.body;
+      serviceCta.textContent = data.cta;
+      serviceCta.href = "#contact";
+      serviceChips.replaceChildren(...data.chips.flatMap((chip, chipIndex) => {
+        const label = document.createElement("span");
+        label.textContent = chip;
+        if (chipIndex === 0) return [label];
+        const separator = document.createElement("i");
+        separator.setAttribute("aria-hidden", "true");
+        return [separator, label];
+      }));
+      serviceChips.setAttribute("aria-label", `${data.name} highlights`);
+      servicePanel.classList.remove("is-changing");
+    }, animate ? 150 : 0);
+  }
+
+  serviceTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => renderPrivateService(index));
+    tab.addEventListener("keydown", (event) => {
+      const vertical = ["ArrowDown", "ArrowUp"].includes(event.key);
+      const horizontal = ["ArrowLeft", "ArrowRight"].includes(event.key);
+      if (!vertical && !horizontal && !["Home", "End"].includes(event.key)) return;
+      event.preventDefault();
+      const forward = event.key === "ArrowDown" || event.key === "ArrowRight";
+      const nextIndex = event.key === "Home" ? 0 : event.key === "End" ? serviceTabs.length - 1 : (index + (forward ? 1 : -1) + serviceTabs.length) % serviceTabs.length;
+      serviceTabs[nextIndex].focus();
+      renderPrivateService(nextIndex);
+    });
+  });
+
+  renderPrivateService(serviceTabs.findIndex((tab) => tab.dataset.service === "helicopter-flight"), false);
+}
+</script>
+
+</body>
+</html>

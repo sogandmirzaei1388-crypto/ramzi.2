@@ -1,0 +1,32 @@
+﻿/* Styles for the dedicated Private Jet entry page only. */
+.private-jet-page .ramzi-how { --ramzi-gold:#c9a253; --ramzi-ink:#111; --ramzi-muted:#666; padding:clamp(42px,6vw,76px) 20px; background:#efefef; overflow:hidden; }
+.private-jet-page .ramzi-how * { box-sizing:border-box; }
+.private-jet-page .ramzi-how-inner { max-width:1450px; margin:auto; }
+.private-jet-page .ramzi-how-heading { text-align:center; margin:0 0 42px; }
+.private-jet-page .ramzi-how-heading>span { display:block; color:var(--ramzi-gold); font-size:11px; font-weight:700; letter-spacing:3px; }
+.private-jet-page .ramzi-how-heading h1 { margin:9px 0; color:var(--ramzi-ink); font-family:var(--en-font); font-size:clamp(44px,5vw,68px); font-weight:700; letter-spacing:-3px; line-height:1.15; }
+.private-jet-page .ramzi-how-heading h1 i { font-family:Georgia,serif; font-weight:400; }
+.private-jet-page .ramzi-how-heading p { margin:10px 0 0; color:#666; font-family:var(--fa-font); font-size:15px; }
+.private-jet-page .ramzi-how-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; direction:ltr; }
+.private-jet-page .ramzi-step { min-width:0; padding:10px; border:8px solid rgba(255,255,255,.8); border-radius:34px; background:#fff; box-shadow:0 18px 35px #0000000e; transition:transform .3s ease,box-shadow .3s ease; }
+.private-jet-page .ramzi-step:hover { transform:translateY(-6px); box-shadow:0 25px 45px #00000017; }
+.private-jet-page .ramzi-visual { position:relative; height:clamp(190px,20vw,275px); overflow:hidden; border-radius:24px; background:#f4f4f4; }
+.private-jet-page .ramzi-visual img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .5s ease; }
+.private-jet-page .ramzi-step:hover .ramzi-visual img { transform:scale(1.035); }
+.private-jet-page .ramzi-visual::after { position:absolute; inset:45% 0 0; content:""; background:linear-gradient(transparent,#10182080); pointer-events:none; }
+.private-jet-page .ramzi-visual-label { position:absolute; z-index:1; bottom:15px; left:17px; color:#fff; font:700 9px var(--en-font); letter-spacing:1.5px; }
+.private-jet-page .ramzi-step-content { padding:22px 10px 14px; text-align:right; }
+.private-jet-page .ramzi-step-title { display:flex; align-items:center; gap:13px; margin-bottom:14px; }
+.private-jet-page .ramzi-number { display:grid; flex:0 0 40px; height:40px; place-items:center; border:1px solid var(--ramzi-gold); border-radius:50%; color:#222; font:16px var(--en-font); }
+.private-jet-page .ramzi-step-title h2 { margin:0; color:#111; font-family:var(--fa-font); font-size:19px; font-weight:700; }
+.private-jet-page .ramzi-step-content p { min-height:58px; margin:0 0 16px; color:var(--ramzi-muted); font-family:var(--fa-font); font-size:13px; line-height:2; }
+.private-jet-page .ramzi-step-tag { display:block; color:var(--ramzi-gold); font:700 9px var(--en-font); letter-spacing:1.4px; text-align:left; }
+.private-jet-page .ramzi-how-footer { display:flex; align-items:center; justify-content:space-between; gap:15px; margin-top:26px; padding:15px 22px; border-radius:20px; background:#fff; }
+.private-jet-page .ramzi-how-footer>span:first-child { font:700 13px var(--en-font); letter-spacing:2px; }
+.private-jet-page .ramzi-how-footer>span:nth-child(2) { color:#999; font:700 9px var(--en-font); letter-spacing:1.3px; }
+.private-jet-page .ramzi-how-footer a { display:inline-flex; align-items:center; gap:8px; padding:11px 18px; border-radius:30px; background:#111; color:#fff; font-family:var(--fa-font); font-size:12px; transition:background .2s ease,transform .2s ease; }
+.private-jet-page .ramzi-how-footer a:hover { transform:translateY(-2px); background:var(--ramzi-gold); color:#111; }
+.private-jet-page .ramzi-how-footer a b { color:var(--ramzi-gold); }
+@media(max-width:900px) { .private-jet-page .ramzi-how-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .private-jet-page .ramzi-step:last-child { grid-column:1/-1; } .private-jet-page .ramzi-step:last-child .ramzi-visual { height:260px; } }
+@media(max-width:600px) { .private-jet-page .ramzi-how { padding:40px 14px; } .private-jet-page .ramzi-how-heading { margin-bottom:27px; } .private-jet-page .ramzi-how-heading h1 { font-size:43px; } .private-jet-page .ramzi-how-grid { grid-template-columns:1fr; gap:15px; } .private-jet-page .ramzi-step:last-child { grid-column:auto; } .private-jet-page .ramzi-visual,.private-jet-page .ramzi-step:last-child .ramzi-visual { height:235px; } .private-jet-page .ramzi-step { border-radius:26px; border-width:6px; padding:8px; } .private-jet-page .ramzi-step-content { padding:19px 7px 12px; } .private-jet-page .ramzi-step-title h2 { font-size:17px; } .private-jet-page .ramzi-step-content p { min-height:0; font-size:13px; } .private-jet-page .ramzi-how-footer { flex-wrap:wrap; justify-content:center; text-align:center; } .private-jet-page .ramzi-how-footer>span:nth-child(2) { order:3; width:100%; } }
+@media(prefers-reduced-motion:reduce) { .private-jet-page .ramzi-step,.private-jet-page .ramzi-visual img,.private-jet-page .ramzi-how-footer a { transition-duration:.01ms; } }

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f1f3f7" />
+    <meta name="description" content="Create a RAMZI AERO account and begin learning aviation English." />
+    <title>Create Your Account — RAMZI AERO</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .signup-page { min-width: 320px; min-height: 100vh; background: #f1f3f7; color: #172333; font-family: var(--serif); }
+      .signup-page .site-header, .signup-page .site-footer { display: none; }
+      .signup-page [hidden] { display: none !important; }
+      .ra-signup-main { display: grid; width: min(100% - 56px, 1504px); min-height: 100vh; place-items: center; margin: 0 auto; padding: 28px 0; }
+      .ra-signup-shell { display: grid; width: 100%; min-height: min(860px, calc(100vh - 56px)); grid-template-columns: minmax(0,1.2fr) minmax(300px,.95fr); overflow: hidden; border: 1px solid rgba(255,255,255,.9); border-radius: 23px; background: #fff; box-shadow: 0 18px 50px rgba(33,48,66,.08); }
+      .ra-signup-form-panel { display: flex; min-width: 0; flex-direction: column; padding: 22px clamp(22px, 3.5vw, 54px) 26px; }
+      .ra-signup-topbar { display: flex; min-height: 42px; align-items: center; justify-content: space-between; gap: 14px; }
+      .ra-signup-brand { display: inline-flex; align-items: center; gap: 10px; color: #15202c; font-size: 13px; font-weight: 650; letter-spacing: .24em; white-space: nowrap; }
+      .ra-signup-brand svg { width: 36px; height: 36px; flex: 0 0 36px; }
+      .ra-signup-brand svg circle { fill: none; stroke: currentColor; stroke-width: 1.8; }
+      .ra-signup-brand svg path { fill: currentColor; }
+      .ra-signup-home { color: #536174; font-size: 11px; white-space: nowrap; }
+      .ra-signup-home span { margin-right: 7px; font-size: 15px; }
+      .ra-signup-form-content { width: min(100%, 440px); margin: auto; padding: 25px 0 12px; }
+      .ra-signup-eyebrow { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 18px; padding: 10px 15px; border-radius: 999px; background: #f1f3f8; color: #344b69; font-size: 11px; }
+      .ra-signup-eyebrow span { color: #164477; font-size: 16px; }
+      .ra-signup-title { margin: 0 0 10px; color: #172231; font-size: clamp(34px, 3.1vw, 48px); font-weight: 600; line-height: 1.08; letter-spacing: -.05em; }
+      .ra-signup-intro { max-width: 390px; margin: 0 0 26px; color: #536176; font-size: 15px; line-height: 1.65; }
+      .ra-signup-form { display: grid; gap: 10px; }
+      .ra-signup-field { position: relative; display: flex; min-width: 0; min-height: 52px; align-items: center; gap: 11px; padding: 0 13px; border: 1px solid #dfe4ec; border-radius: 13px; background: rgba(255,255,255,.85); transition: border-color .2s ease, box-shadow .2s ease; }
+      .ra-signup-field:focus-within { border-color: #7f9cbd; box-shadow: 0 0 0 3px rgba(35,86,143,.08); }
+      .ra-signup-field-icon { display: grid; width: 18px; height: 18px; flex: 0 0 18px; place-items: center; color: #65758a; }
+      .ra-signup-field-icon svg, .ra-signup-eye svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+      .ra-signup-field input { width: 100%; min-width: 0; height: 46px; border: 0; outline: 0; background: transparent; color: #1a2635; font: 13px var(--serif); }
+      .ra-signup-field input::placeholder { color: #738095; opacity: 1; }
+      .ra-signup-eye { display: grid; flex: 0 0 28px; width: 28px; height: 30px; padding: 5px; place-items: center; border: 0; background: transparent; color: #66758a; cursor: pointer; }
+      .ra-signup-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; clip-path: inset(50%); }
+      .ra-signup-submit { display: flex; min-height: 54px; align-items: center; justify-content: center; gap: 13px; margin-top: 4px; border: 0; border-radius: 14px; background: #17385d; color: #fff; font-size: 14px; font-weight: 550; cursor: pointer; transition: background .2s ease, transform .2s ease; }
+      .ra-signup-submit:hover { transform: translateY(-1px); background: #214b77; }
+      .ra-signup-submit span:last-child { font-size: 18px; }
+      .ra-signup-status { min-height: 0; margin: 0; color: #536176; font-family: var(--persian); font-size: 11px; line-height: 1.65; }
+      .ra-signup-divider { display: flex; align-items: center; gap: 11px; margin: 16px 0 10px; color: #778195; font-size: 11px; }
+      .ra-signup-divider::before, .ra-signup-divider::after { height: 1px; flex: 1; background: #e0e4eb; content: ""; }
+      .ra-signup-providers { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+      .ra-signup-provider { display: flex; min-height: 43px; align-items: center; justify-content: center; gap: 8px; border: 1px solid #dfe4ec; border-radius: 999px; background: #fff; color: #1b2532; font-size: 12px; cursor: pointer; }
+      .ra-signup-provider b { font-size: 15px; }
+      .ra-signup-provider--google b { color: #4285f4; }
+      .ra-signup-provider--apple b { color: #111; }
+      .ra-signup-switch { margin: 20px 0 0; color: #677388; font-size: 11px; text-align: center; }
+      .ra-signup-switch a { padding-left: 3px; color: #164c91; font-weight: 600; }
+      .ra-signup-promo { position: relative; display: flex; min-height: 100%; align-items: flex-end; overflow: hidden; padding: 28px; background: #30485d url("public/images/flight-training-clouds.jpeg") 58% center / cover no-repeat; color: #fff; }
+      .ra-signup-promo::before { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(19,39,60,.02) 22%, rgba(15,32,48,.78) 100%); content: ""; }
+      .ra-signup-promo-copy { position: relative; z-index: 1; width: 100%; text-align: center; }
+      .ra-signup-promo-rule { width: 30px; height: 1px; margin: 0 auto 14px; background: rgba(255,255,255,.8); }
+      .ra-signup-promo-copy p { margin: 0; font-size: 10px; letter-spacing: .29em; line-height: 1.9; }
+      @media (max-width: 1100px) {
+        .ra-signup-main { width: min(100% - 32px, 900px); padding: 16px 0; }
+        .ra-signup-shell { min-height: min(840px, calc(100vh - 32px)); grid-template-columns: minmax(0,1fr) minmax(280px,.85fr); }
+        .ra-signup-form-panel { padding-right: 28px; padding-left: 28px; }
+      }
+      @media (max-width: 680px) {
+        .ra-signup-main { width: calc(100% - 16px); min-height: 100vh; padding: 8px 0; }
+        .ra-signup-shell { min-height: 0; grid-template-columns: 1fr; border-radius: 17px; }
+        .ra-signup-form-panel { padding: 15px 18px 21px; }
+        .ra-signup-brand { gap: 7px; font-size: 11px; letter-spacing: .18em; }
+        .ra-signup-brand svg { width: 31px; height: 31px; flex-basis: 31px; }
+        .ra-signup-home { font-size: 10px; }
+        .ra-signup-form-content { padding: 28px 0 12px; }
+        .ra-signup-title { font-size: 37px; }
+        .ra-signup-intro { margin-bottom: 21px; font-size: 14px; }
+        .ra-signup-field { min-height: 48px; }
+        .ra-signup-field input { height: 42px; }
+        .ra-signup-submit { min-height: 49px; }
+        .ra-signup-promo { min-height: 260px; padding: 20px; background-position: center 56%; }
+        .ra-signup-promo-copy p { font-size: 9px; }
+      }
+      @media (prefers-reduced-motion: reduce) { .signup-page *, .signup-page *::before, .signup-page *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+    </style>
+  </head>
+  <body class="signup-page">
+    <main class="ra-signup-main">
+      <section class="ra-signup-shell" aria-label="Create your RAMZI AERO account">
+        <div class="ra-signup-form-panel">
+          <div class="ra-signup-topbar">
+            <a class="ra-signup-brand" href="index.html#home" aria-label="RAMZI AERO Home">
+              <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><path d="M20 5 22.5 17l10-4.5 1.2 2.2-10.4 6 .9 13-2.2 2-2.2-2 .9-13-10.4-6 1.2-2.2 10 4.5z"/></svg>
+              <span>RAMZI AERO</span>
+            </a>
+            <a class="ra-signup-home" href="index.html#home"><span aria-hidden="true">←</span> Back to Home</a>
+          </div>
+          <div class="ra-signup-form-content">
+            <p class="ra-signup-eyebrow"><span aria-hidden="true">✦</span> Join Our Aviation English Course</p>
+            <h1 class="ra-signup-title">Create Your<br />Account</h1>
+            <p class="ra-signup-intro">Start your journey to master aviation English and reach new heights.</p>
+            <form class="ra-signup-form" id="ra-signup-form">
+              <label class="ra-signup-field"><span class="ra-signup-field-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.4-3.5 3-5.5 7-5.5s6.6 2 7 5.5"/></svg></span><span class="ra-signup-sr-only">Full Name</span><input name="fullName" type="text" autocomplete="name" placeholder="Full Name" required /></label>
+              <label class="ra-signup-field"><span class="ra-signup-field-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="m4.5 7 7.5 5.5L19.5 7"/></svg></span><span class="ra-signup-sr-only">Email Address</span><input name="email" type="email" autocomplete="email" placeholder="Email Address" required /></label>
+              <label class="ra-signup-field"><span class="ra-signup-field-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h3l1.4 4-2 1.7a15 15 0 0 0 5.4 5.4l1.7-2 4 1.4v3c0 1.1-.9 2-2 2C10 19 5 14 5 5.5c0-1.1.9-2 2-2Z"/></svg></span><span class="ra-signup-sr-only">Phone Number</span><input name="phone" type="tel" autocomplete="tel" placeholder="Phone Number" /></label>
+              <label class="ra-signup-field"><span class="ra-signup-field-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v2"/></svg></span><span class="ra-signup-sr-only">Password</span><input name="password" type="password" autocomplete="new-password" placeholder="Password" minlength="8" required /><button class="ra-signup-eye" type="button" aria-label="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg></button></label>
+              <label class="ra-signup-field"><span class="ra-signup-field-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v2"/></svg></span><span class="ra-signup-sr-only">Confirm Password</span><input name="confirmPassword" type="password" autocomplete="new-password" placeholder="Confirm Password" minlength="8" required /><button class="ra-signup-eye" type="button" aria-label="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg></button></label>
+              <button class="ra-signup-submit" type="submit"><span>Sign Up</span><span aria-hidden="true">→</span></button>
+              <p class="ra-signup-status" id="ra-signup-status" role="status" aria-live="polite"></p>
+            </form>
+            <div class="ra-signup-divider">or continue with</div>
+            <div class="ra-signup-providers"><button class="ra-signup-provider ra-signup-provider--google" type="button"><b aria-hidden="true">G</b> Google</button><button class="ra-signup-provider" type="button"><b class="ra-signup-provider--apple" aria-hidden="true">●</b> Apple</button></div>
+            <p class="ra-signup-switch">Already have an account? <a href="my-account.html">Sign In</a></p>
+          </div>
+        </div>
+        <aside class="ra-signup-promo" aria-label="Learn aviation English and fly higher">
+          <div class="ra-signup-promo-copy"><div class="ra-signup-promo-rule"></div><p>LEARN AVIATION ENGLISH<br />FLY HIGHER</p></div>
+        </aside>
+      </section>
+    </main>
+    <script>
+      document.querySelectorAll(".ra-signup-eye").forEach((button) => {
+        button.addEventListener("click", () => {
+          const input = button.parentElement.querySelector("input");
+          const show = input.type === "password";
+          input.type = show ? "text" : "password";
+          button.setAttribute("aria-pressed", String(show));
+          button.setAttribute("aria-label", show ? "Hide password" : "Show password");
+        });
+      });
+      const signupForm = document.querySelector("#ra-signup-form");
+      const signupStatus = document.querySelector("#ra-signup-status");
+      signupForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const password = signupForm.elements.password.value;
+        const confirmPassword = signupForm.elements.confirmPassword.value;
+        if (password !== confirmPassword) {
+          signupStatus.textContent = "Passwords do not match.";
+          signupForm.elements.confirmPassword.focus();
+          return;
+        }
+        signupStatus.textContent = "Your account can be created once the hosting and account database are connected.";
+      });
+      document.querySelectorAll(".ra-signup-provider").forEach((button) => {
+        button.addEventListener("click", () => {
+          signupStatus.textContent = "Google and Apple sign-in will be available after authentication is connected.";
+        });
+      });
+    </script>
+  </body>
+</html>

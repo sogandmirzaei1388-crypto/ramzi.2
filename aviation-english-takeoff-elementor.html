@@ -1,0 +1,70 @@
+<!-- RAMZI AERO Aviation English hero: add markup, CSS, and JS to an Elementor HTML widget. -->
+<section class="ra-takeoff" id="takeoff" aria-labelledby="aviation-english-title">
+  <div class="ra-takeoff-stage">
+    <p class="ra-takeoff-backdrop" aria-hidden="true"><span>READY TO</span><span>TAKE OFF?</span></p>
+    <div class="ra-takeoff-jet" aria-hidden="true">
+      <img class="ra-takeoff-plane" src="public/images/aviation-english-aircraft-transparent.png" alt="" fetchpriority="high" />
+    </div>
+  </div>
+  <div class="ra-takeoff-copy">
+    <h1 class="ra-takeoff-heading" id="aviation-english-title"><span>Aviation English</span><em>Fly with Confidence.</em></h1>
+    <p class="ra-takeoff-description">Master the language of aviation — for a safer,<br class="ra-takeoff-break" /> smarter and smoother journey.</p>
+    <a class="ra-takeoff-button" href="index.html#contact">Explore Courses <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+<style>
+/* Aviation English takeoff hero: all rules scoped to this section */
+.ra-takeoff { --ra-takeoff-ink: #111315; --ra-takeoff-muted: #69645e; --ra-takeoff-en: var(--en-font, "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif); position: relative; isolation: isolate; width: min(100%, 1600px); min-height: clamp(660px, 88vh, 900px); margin: 18px auto 34px; padding: 24px 0 34px; overflow: hidden; background: #efefef; color: var(--ra-takeoff-ink); text-align: center; }
+.ra-takeoff-stage { position: relative; display: grid; height: clamp(410px, 58vh, 590px); place-items: center; }
+.ra-takeoff-backdrop { display: flex; width: 100%; max-width: 100%; box-sizing: border-box; flex-direction: column; align-items: center; margin: 0; padding: 0 .04em; color: rgba(90,77,61,.085); direction: ltr; font-family: var(--ra-takeoff-en); font-size: clamp(60px,13.5vw,220px); font-weight: 900; letter-spacing: -.065em; line-height: .84; text-align: center; text-transform: uppercase; unicode-bidi: isolate; user-select: none; white-space: nowrap; }
+.ra-takeoff-backdrop span { display: block; max-width: 100%; direction: ltr; unicode-bidi: isolate; }
+.ra-takeoff-jet { position: absolute; z-index: 1; top: 50%; left: 50%; width: min(44vw,600px); aspect-ratio: 1; pointer-events: none; transform: translate(-50%,-50%) rotate(-12deg); will-change: transform; }
+.ra-takeoff-jet::before { content:""; position:absolute; z-index:-1; left:18%; top:56%; width:68%; height:22%; border-radius:50%; background:radial-gradient(ellipse,rgba(67,52,35,.23),transparent 70%); filter:blur(18px); transform:rotate(-12deg); }
+.ra-takeoff-jet img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: screen; }
+.ra-takeoff-plane { filter: drop-shadow(0 14px 14px rgba(75,55,35,.14)); }
+.ra-takeoff-copy { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 13px; width: min(92%,720px); margin: clamp(10px,2vh,22px) auto 0; }
+.ra-takeoff-heading { display: flex; flex-direction: column; align-items: center; margin: 0; font-family: var(--ra-takeoff-en); font-size: clamp(35px,4.4vw,64px); font-weight: 650; letter-spacing: -.055em; line-height: 1.02; }
+.ra-takeoff-heading em { color: var(--ra-takeoff-muted); font-family: Georgia,"Times New Roman",serif; font-size: .9em; font-weight: 400; letter-spacing: -.035em; }
+.ra-takeoff-description { margin: 5px 0 1px; color: #55514b; font-family: var(--ra-takeoff-en); font-size: 13px; line-height: 1.6; }
+.ra-takeoff-button { display: inline-flex; min-height: 44px; align-items: center; gap: 12px; margin-top: 4px; padding: 5px 7px 5px 18px; border: 1px solid rgba(80,70,55,.08); border-radius: 999px; background: rgba(255,255,255,.68); box-shadow: 0 7px 20px rgba(60,48,35,.13); color: var(--ra-takeoff-ink); font-family: var(--ra-takeoff-en); font-size: 13px; font-weight: 600; transition: transform .25s ease,box-shadow .25s ease; }
+.ra-takeoff-button:hover,.ra-takeoff-button:focus-visible { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(60,48,35,.2); }
+.ra-takeoff-button:focus-visible { outline: 3px solid rgba(185,149,91,.55); outline-offset: 3px; }
+.ra-takeoff-button span { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 50%; background: rgba(255,255,255,.94); font-size: 17px; }
+@media (max-width:760px) { .ra-takeoff { min-height:650px; margin:12px auto 25px; padding-top:20px; } .ra-takeoff-stage { height:clamp(380px,57vh,500px); } .ra-takeoff-backdrop { font-size:clamp(38px,9.5vw,68px); letter-spacing:-.055em; } .ra-takeoff-jet { width:min(78vw,490px); } .ra-takeoff-copy { margin-top:10px; gap:12px; } .ra-takeoff-heading { font-size:clamp(34px,8vw,48px); } .ra-takeoff-description { max-width:34em; font-size:12px; } }
+@media (max-width:420px) { .ra-takeoff { min-height:620px; } .ra-takeoff-stage { height:365px; } .ra-takeoff-backdrop { font-size:clamp(34px,9vw,38px); letter-spacing:-.045em; } .ra-takeoff-jet { width:86vw; } .ra-takeoff-copy { margin-top:18px; } .ra-takeoff-description { max-width:300px; } .ra-takeoff-description .ra-takeoff-break { display:none; } }
+@media (prefers-reduced-motion:reduce) { .ra-takeoff *, .ra-takeoff *::before, .ra-takeoff *::after { scroll-behavior:auto !important; transition-duration:.01ms !important; } }
+
+</style>
+<script>
+/* Scroll-responsive aircraft on the Aviation English page only */
+(() => {
+  const section = document.querySelector(".ra-takeoff");
+  const jet = section?.querySelector(".ra-takeoff-jet");
+  if (!section || !jet) return;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (reducedMotion.matches) return;
+  let scheduled = false;
+
+  const updateAircraft = () => {
+    scheduled = false;
+    const rect = section.getBoundingClientRect();
+    const progress = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)));
+    const x = (progress - .5) * 10;
+    const y = (.5 - progress) * 6;
+    const angle = -15 + progress * 6;
+    const scale = .97 + progress * .06;
+    jet.style.transform = "translate(calc(-50% + " + x.toFixed(2) + "vw), calc(-50% + " + y.toFixed(2) + "vh)) rotate(" + angle.toFixed(2) + "deg) scale(" + scale.toFixed(3) + ")";
+  };
+
+  const requestUpdate = () => {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(updateAircraft);
+  };
+
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+  updateAircraft();
+})();
+</script>
